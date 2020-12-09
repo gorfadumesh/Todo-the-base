@@ -25,15 +25,26 @@ function TodoForm({ addTodo }) {
   }
 
   return (
-    <form className="todo-form" onSubmit={handleSubmit}>
-      <TextField
-        label="Task"
-        type="text"
-        name="task"
-        value={todo.task}
-        onChange={handleTaskInputChange}
-      />
-      <Button type="submit">Submit</Button>
+    <form name="contact" method="post">
+      <input type="hidden" name="form-name" value="contact" />
+      <p>
+        <label>
+          Your Name: <input type="text" name="name" />
+        </label>
+      </p>
+      <p>
+        <label>
+          Your Email: <input type="email" name="email" />
+        </label>
+      </p>
+      <p>
+        <label>
+          Message: <textarea name="message"></textarea>
+        </label>
+      </p>
+      <p>
+        <button type="submit">Send</button>
+      </p>
     </form>
   );
 }
